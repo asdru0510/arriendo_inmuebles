@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<h3 class="text-center my-4">Ingresa a tu cuenta</h3>
+<div class="row">
+    <div class="col-4 offset-4">
+        {% if form.errors %}
+        <div class="row">
+            <div class="col">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Usuario y contraseña no coinciden</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="id_username" class="form-label">Ingresa tu usuario: </label>
+                <input type="text" class="form-control" name="{{ form.username.name }}">
+            </div>
+            <div class="mb-3">
+                <label for="id_password" class="form-label">Ingresa tu contraseña: </label>
+                <input type="password" class="form-control" name="{{ form.password.name }}">
+            </div>
+            <button type="submit" class="btn btn-success">Ingresar</button>
+        </form>
+   </div>
+</div>
+{% endblock %}

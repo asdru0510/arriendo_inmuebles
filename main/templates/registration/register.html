@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<div class="container">
+    <h2 class="text-center my-4">Registro de Usuario</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form action="{% url 'register' %}" method="post">
+                {% csrf_token %}
+                <div class="row g-3 align-items-center mb-2">
+                    <!-- Nombre de Usuario o campo unico de identificacion-->
+                    <div class="col-2 offset-2 mb-1">
+                        <label for="username" class="form-label">RUT: </label>
+                    </div>
+                    <div class="col-8">
+                        <input type="text" name="username" id="username" class="form-control" placeholder="RUT" value="{{ username | default:'' }}">
+                    </div>
+                    
+                    <!-- Nombres -->
+                    <div class="col-2 offset-2 mb-1">
+                        <label for="first_name" class="form-label">Nombres: </label>
+                    </div>
+                    <div class="col-8">
+                        <input type="text" name="first_name" id="first_name" class="form-control" placeholder="Nombres" value="{{ nombres | default:'' }}">
+                    </div>
+
+                    <!-- Apellidos -->
+                    <div class="col-2 offset-2 mb-1">
+                        <label for="last_name" class="form-label">Apellidos: </label>
+                    </div>
+                    <div class="col-8">
+                        <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Apellidos" value="{{ apellidos | default:'' }}">
+                    </div>
+                    
+                    <!-- Email -->
+                    <div class="col-2 offset-2 mb-1">
+                        <label for="email" class="form-label">Correo electronico: </label>
+                    </div>
+                    <div class="col-8">
+                        <input type="email" name="email" id="email" class="form-control" placeholder="Correo electrónico" value="{{ correo | default:'' }}">
+                    </div>
+
+                      <!-- Dirección -->
+                      <div class="col-2 offset-2 mb-1">
+                        <label for="direccion" class="form-label">Dirección: </label>
+                    </div>
+                    <div class="col-8">
+                        <input type="text" name="direccion" id="direccion" class="form-control" placeholder="Dirección"value="{{ direccion | default:'' }}">
+                    </div>
+
+                    <!-- Teléfono -->
+                    <div class="col-2 offset-2 mb-1">
+                        <label for="Telefono" class="form-label">Teléfono: </label>
+                    </div>
+                    <div class="col-8">
+                        <input type="text" name="telefono" id="telefono" class="form-control" placeholder="Teléfono" value="{{ telefono | default:'' }}">
+                    </div>                
+
+
+                    <!-- Tipo usuario -->
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="rol" id="rol1" value="arrendador">
+                        <label class="form-check-label" for="rol1">Arrendador</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="rol" id="rol2" value="arrendatario">
+                        <label class="form-check-label" for="rol2">Arrendatario</label>
+                      </div>       
+
+                    
+
+                    
+                    <!-- Contraseña -->
+
+                        <div class="col-2 offset-2 mb-1">
+                            <label for="password" class="form-label">Contraseña: </label>
+                        </div>
+                        <div class="col-8">
+                            <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña">
+                        </div>
+
+                    
+                    
+                    <!-- Confirmar Contraseña -->
+
+                        <div class="col-2 offset-2 mb-1">
+                            <label for="password_repeat" class="form-label">Confirmar Contraseña: </label>
+                        </div>
+                        <div class="col-8">
+                            <input type="password" name="password_repeat" id="password_repeat" class="form-control" placeholder="Confirmar Contraseña">
+                        </div>
+
+                    
+                </div>
+                <div class="d-flex justify-content-center align-items-center">
+                    <button type="submit" class="btn btn-success">Registrarse</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -27,6 +27,10 @@ class UserProfile(models.Model):
 class Region(models.Model):
     cod = models.CharField(max_length=5, primary_key=True)
     nombre = models.CharField(max_length=255)
+    def __str__(self):
+        nombre = self.nombre
+        codigo = self.cod
+        return f'{nombre} | {codigo}'
 
 class Comuna(models.Model):
     cod = models.CharField(max_length=5, primary_key=True)

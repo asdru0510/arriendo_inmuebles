@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">        
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Arriendos</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/acerca">Acerca</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contacto">Contacto</a>
+                </li>
+                {% if user.is_authenticated %}
+                {% if usuario.tipo_usuario == 'arrendador' or user.is_staff %}
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Agregar Propiedad</a>
+                </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'profile' %}">Mis Datos</a>
+                </li>                
+                {% endif %}   
+            </ul>
+            {% if not user.is_authenticated %}
+            <div class="mx-2 ms-auto">
+                <a class="btn btn-outline-success mx-1" href="{% url 'login' %}">Ingresar</a>
+                <a class="btn btn-outline-warning mx-1" href="{% url 'register' %}">Registrate</a>
+            </div>
+            
+            {% endif %}
+            {% if user.is_authenticated %}
+            <span class="navbar-text ms-auto text-light">
+                Bienvenid@, {{ user.first_name|default:user.get_username }}
+            </span>
+            <form id="logout-form" action="{% url 'logout' %}" method="POST">
+                {% csrf_token %}
+                <button type="submit"class="btn btn-danger mx-2">Cerrar sesion</button>
+            </form>            
+            {% endif %}
+        </div>
+    </div>          
+</nav>

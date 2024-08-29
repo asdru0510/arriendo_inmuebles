@@ -59,11 +59,11 @@
 
                     <!-- Tipo usuario -->
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="rol" id="rol1" value="arrendador">
+                        <input class="form-check-input" type="radio" name="rol" id="rol1" value="arrendador" required {% if rol =='arrendador' %} checked {% endif %}>
                         <label class="form-check-label" for="rol1">Arrendador</label>
                       </div>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="rol" id="rol2" value="arrendatario">
+                        <input class="form-check-input" type="radio" name="rol" id="rol2" value="arrendatario" required {% if rol =='arrendatario' %} checked {% endif %}>
                         <label class="form-check-label" for="rol2">Arrendatario</label>
                       </div>       
 

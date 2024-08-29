@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block content %}
+{% block contenido %}
 <div class="container">
 	<div class="row">
 		<div class="col-4">
@@ -46,7 +46,7 @@
 							class="form-control"
 							name="first_name"
 							placeholder=""
-							value="{{ usuario.nombres }}"
+							value="{{ user.first_name }}"
 							required
 					>
 				</div>
@@ -56,9 +56,9 @@
 							id=""
 							type="text"
 							class="form-control"
-							name="apellidos"
+							name="last_name"
 							placeholder=""
-							value="{{ usuario.apellidos }}"
+							value="{{ user.last_name }}"
 							required
 					>
 				</div>
@@ -68,9 +68,9 @@
 							id=""
 							type="email"
 							class="form-control"
-							name="correo"
+							name="email"
 							placeholder=""
-							value="{{ usuario.correo }}"
+							value="{{ user.email }}"
 							required
 					>
 				</div>
@@ -82,7 +82,7 @@
 							class="form-control"
 							name="telefono"
 							placeholder=""
-							value="{{ usuario.telefono }}
+							value="{{ user.userprofile.telefono_personal }}"
 					>
 				</div>
 				<div class="mb-3">
@@ -93,7 +93,7 @@
 						class="form-control"
 						name="direccion"
 						placeholder=""
-						value="{{ usuario.direccion }}"
+						value="{{ user.userprofile.direccion }}"
 						required
 					>
 				</div>
@@ -103,11 +103,11 @@
 						id=""
 						type="radio"
 						class="form-check-imput"
-						name="tipo_usuario"
+						name="rol"
 						placeholder=""
 						value="arrendador"
 						required
-						{% if usuario.tipo_usuario == 'arrendador' %}
+						{% if user.userprofile.rol == 'arrendador' %}
 							checked
 						{% endif %}
 					>
@@ -118,11 +118,11 @@
 								id=""
 								type="radio"
 								class="form-check-imput"
-								name="tipo_usuario"
+								name="rol"
 								placeholder=""
 								value="arrendatario"
 								required
-								{% if usuario.tipo_usuario == 'arrendatario' %}
+								{% if user.userprofile.rol == 'arrendatario' %}
 									checked
 								{% endif %}
 						>

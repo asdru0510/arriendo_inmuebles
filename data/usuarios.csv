@@ -1,0 +1,10 @@
+nombres,apellidos,rut,correo,password,pass_confirm,direccion,telefono,rol
+Juan,Perez,12345678-9,juan.perez@example.com,password123,password123,Av. Las Flores 1234,91234567-8,arrendatario
+Maria,Gonzalez,98765432-1,maria.gonzalez@example.com,password123,password123,Av. Los Olivos 5678,92234567-8,arrendador
+Ana,Rojas,99887766-7,ana.rojas@example.com,password123,password123,Calle Los Claveles 7890,94445678-9,arrendatario
+Luis,Fernandez,66778899-0,luis.fernandez@example.com,password123,password123,Av. Los Pinos 2345,95556789-0,arrendador
+Sofia,Lopez,55667788-1,sofia.lopez@example.com,password123,password123,Av. Los Almendros 4567,96667890-1,arrendatario
+Carlos,Ramirez,33445566-2,carlos.ramirez@example.com,password123,password123,Calle Las Hortensias 123,97778901-2,arrendador
+Laura,Morales,22334455-3,laura.morales@example.com,password123,password123,Calle Los Geranios 456,98889012-3,arrendatario
+Javier,Hernandez,44556677-4,javier.hernandez@example.com,password123,password123,Calle Las Camelias 789,99900123-4,arrendador
+Paula,Castro,77889900-5,paula.castro@example.com,password123,password123,Av. Los Laureles 1011,91111234-5,arrendatario
